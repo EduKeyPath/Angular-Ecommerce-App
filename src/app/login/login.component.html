@@ -1,0 +1,45 @@
+<div class="container-fluid login-page">
+    <div *ngIf="!!loginSuccess" class="position-absolute m-2 alert-wrap">
+        <div class="alert alert-success m-0" role="alert">
+            Login successfull
+        </div>
+    </div>
+    <div *ngIf="!!loginError" class="position-absolute m-2 alert-wrap">
+        <div class="alert alert-danger m-0" role="alert">
+            Login error
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 p-0">
+            <div class="left-part">
+                <img src="" alt="" title="" class="logo" />
+                <p>
+                    POC <br/>
+                    Banti Shaw
+                </p>
+            </div>
+        </div>
+        <div class="col-6 p-0">
+            <div class="right-part p-2 d-flex align-items-center justify-content-center">
+                <form [formGroup]="loginForm" (ngSubmit)="userLogin();">
+                    <div class="mb-3">
+                        <div *ngIf="!!invalidEmail" class="alert alert-danger m-0" role="alert">
+                            Invalid email
+                        </div>
+                        <label for="inputEmail" class="form-label">Email address</label>
+                        <input type="email" formControlName="username" class="form-control" value="" id="inputEmail" />
+                    </div>
+                    <div class="mb-3">
+                        <div *ngIf="!!invalidPass" class="alert alert-danger m-0" role="alert">
+                            Invalid password
+                        </div>
+                        <label for="inputPassword" class="form-label">Password</label>
+                        <input type="password" formControlName="password" class="form-control" value="" id="inputPassword" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.large-img img {
+    height: 540px !important;
+    width: 338px !important;
+}
+.other-imgs .img-thumbnail {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.badge {
+    z-index: 1;
+}

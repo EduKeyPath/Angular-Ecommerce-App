@@ -1,0 +1,7 @@
+.customer-review .btn-group>.btn {
+    flex: inherit;
+    color: #d6d6d6;
+}
+.customer-review .btn-group>.btn.reviewed{
+    color:#d8d83f;
+}

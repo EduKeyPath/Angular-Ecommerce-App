@@ -1,0 +1,19 @@
+<div class="row" *ngIf="!!productList && productList.length > 0">
+    <div class="col-3 mb-3" *ngFor="let product of productList">
+        <div class="card p-2">
+            <ng-container *ngIf="!!product.isHighDemand && product.isHighDemand === 'yes'">
+                <span class="badge rounded-pill bg-danger position-absolute high">High Demand</span>
+            </ng-container>
+            <img src="{{product.image}}" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text text-truncate mb-0">{{product.des}}</p>
+                <p class="h5 mt-2">{{product.price}}</p>
+                <button class="btn btn-primary">Details</button>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-container *ngIf="!!productList && productList.length < 1">
+    <div class="alert alert-primary text-center" role="alert">No Products</div>
+</ng-container>
